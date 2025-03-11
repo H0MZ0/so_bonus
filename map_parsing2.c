@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 01:42:15 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 02:05:58 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/11 18:11:16 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ void	count_helper(t_mlx *mlx, int n)
 {
 	if ((mlx->game.c < 1
 			||mlx->game.p != 1
-			|| mlx->game.e != 1
-			|| mlx->game.x < 1)
+			|| mlx->game.e != 1)
 		&& n == 1)
 	{
 		free_arr(mlx->game.map);

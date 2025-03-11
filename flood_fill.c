@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 18:30:48 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 02:50:57 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/11 18:13:39 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	floid_recursive(char **tab, t_axis size, t_axis begin, char target)
 {
 	if (begin.x < 0 || begin.y < 0 || begin.x >= size.x || begin.y >= size.y)
 		return ;
-	if (tab[begin.y][begin.x] == 'F' || tab[begin.y][begin.x] == '1')
+	if (tab[begin.y][begin.x] == 'F' || tab[begin.y][begin.x] == '1' || tab[begin.y][begin.x] == 'E')
 		return ;
 	if (tab[begin.y][begin.x] != target && tab[begin.y][begin.x] != 'C'
 		&& tab[begin.y][begin.x] != 'E' && tab[begin.y][begin.x] != '0')
@@ -56,12 +56,13 @@ int	ft_flood_fill_check(t_mlx *mlx)
 		return (0);
 	flood_fill(mlx);
 	y = 0;
+	print_arr(mlx->game.copy);
 	while (y < size.y)
 	{
 		x = 0;
 		while (x < size.x)
 		{
-			if ((mlx->game.map[y][x] == 'C' || mlx->game.map[y][x] == 'E')
+			if ((mlx->game.map[y][x] == 'C')
 				&& mlx->game.copy[y][x] != 'F')
 				return (0);
 			x++;

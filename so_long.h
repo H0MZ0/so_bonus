@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:25:40 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 16:28:04 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/11 17:22:53 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ typedef struct s_mlx
 	void	*mlx;
 	void	*win;
 	int		moves;
+	int		width;
+	int		height;
 	int		coin_coll;
 }	t_mlx;
 
