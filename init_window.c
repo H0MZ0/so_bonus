@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 00:07:21 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 02:07:23 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/11 16:30:09 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	rendre_map(t_mlx *mlx)
 		}
 		ax.y++;
 	}
+	display_moves(mlx);
 }
 
 int	key_hook(int keyhook, t_mlx *mlx)
@@ -107,7 +108,7 @@ void	in_mlx(t_mlx *mlx)
 	init_wind(mlx);
 	find_player(mlx);
 	rendre_map(mlx);
-	mlx_key_hook(mlx->win, key_hook, mlx);
 	mlx_loop_hook(mlx->mlx, update_game, mlx);
+	mlx_key_hook(mlx->win, key_hook, mlx);
 	mlx_loop(mlx->mlx);
 }

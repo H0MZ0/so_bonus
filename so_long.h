@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:25:40 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 02:07:36 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/11 16:28:04 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ void	animate_enemy(t_mlx *mlx);
 void	rendre_map(t_mlx *mlx);
 void	count_helper(t_mlx *mlx, int n);
 void	rendre_helper(t_mlx *mlx, int y, int x);
+void	display_moves(t_mlx *mlx);
 
 // FREE
 int		close_window(void *param);
