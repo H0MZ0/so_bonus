@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:32:29 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 17:32:55 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/11 22:00:53 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	draw_rectangle(t_mlx *mlx, int x, int y)
 		j = 0;
 		while (j < mlx->width)
 		{
-			mlx_pixel_put(mlx->mlx, mlx->win, x + j, y + i, 0x000000);
+			mlx_pixel_put(mlx->mlx, mlx->win, x + j, y + i, 0x000000);//dont use it
 			j++;
 		}
 		i++;

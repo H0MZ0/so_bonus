@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 01:56:02 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 17:32:17 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/11 22:02:47 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	animate_enemy(t_mlx *mlx)
 	static int	tick = 0;
 
 	tick++;
-	if (tick > 100)
+	if (tick > 700)
 	{
 		frame = (frame + 1) % 4;
 		tick = 0;

@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 10:21:31 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 02:44:16 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/12 04:40:54 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,13 @@ void	map_filter(char *map)
 	count_things(&mlx, 1);
 	copy_map(&mlx);
 	find_player(&mlx);
-	if (!ft_flood_fill_check(&mlx))
-		fail_flood(&mlx);
+	// if (!ft_flood_fill_check(&mlx))
+	// 	fail_flood(&mlx);
+	flood_fill(&mlx, mlx.p_x, mlx.p_y, mlx.game.copy, 0);
+	check_flood(&mlx, mlx.game.copy, 0);
+	flood_fill(&mlx, mlx.p_x, mlx.p_y, mlx.game.copy, 1);
+	check_flood(&mlx, mlx.game.copy, 1);
+	// print_arr(mlx.game.copy);
 	in_mlx(&mlx);
 }
 

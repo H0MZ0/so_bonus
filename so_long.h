@@ -6,7 +6,7 @@
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:25:40 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/11 17:22:53 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/12 03:29:04 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,14 @@ void	free_arr(char **str);
 void	check_rl_walls(t_mlx *game);
 void	check_fl_walls(t_mlx *game);
 void	fl_walls(t_mlx *game, int y);
-void	flood_fill(t_mlx *mlx);
+void	flood_fill(t_mlx *mlx, int x, int y, char **copy, int exit_allowed);
 int		ft_strcmp(const char *s1, const char *s2);
 void	ft_putstr(char *str, int fd);
 void	put_err(char *str);
 void	in_mlx(t_mlx *mlx);
 void	move_player(t_mlx *mlx, int new_x, int new_y);
 size_t	ft_strcpy(char *dst, const char *src);
+void	check_flood(t_mlx *mlx, char **map, int exit_allowed);
 
 int		ft_flood_fill_check(t_mlx *mlx);
 void	print_moves(t_mlx *mlx);
