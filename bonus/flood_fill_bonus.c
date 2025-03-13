@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flood_fill.c                                       :+:      :+:    :+:   */
+/*   flood_fill_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 18:30:48 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/13 01:07:52 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/13 01:08:38 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	flood_fill(t_mlx *mlx, int x, int y, char **copy)
 {
@@ -52,7 +52,7 @@ void	check_flood(t_mlx *mlx, char **map)
 			if (mlx->exit)
 			{
 				if (map[i][j] == 'E')
-					flood_err(mlx, "can't reach door\n");
+					flood_err(mlx, "Error\ncan't reach door\n");
 			}
 			j++;
 		}

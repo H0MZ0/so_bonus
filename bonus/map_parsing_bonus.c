@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_parsing.c                                      :+:      :+:    :+:   */
+/*   map_parsing_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakader <hakader@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:01:07 by hakader           #+#    #+#             */
-/*   Updated: 2025/03/13 01:11:58 by hakader          ###   ########.fr       */
+/*   Updated: 2025/03/13 01:04:04 by hakader          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	read_map(t_mlx *mlx, char *map)
 {
@@ -76,6 +76,7 @@ void	check_others(t_mlx *mlx)
 			if (!(mlx->game.map[mlx->axis.y][mlx->axis.x] == 'C'
 				|| mlx->game.map[mlx->axis.y][mlx->axis.x] == 'E'
 				|| mlx->game.map[mlx->axis.y][mlx->axis.x] == 'P'
+				|| mlx->game.map[mlx->axis.y][mlx->axis.x] == 'X'
 				|| mlx->game.map[mlx->axis.y][mlx->axis.x] == '0'
 				|| mlx->game.map[mlx->axis.y][mlx->axis.x] == '1'
 				|| mlx->game.map[mlx->axis.y][mlx->axis.x] == '\n'))
@@ -113,6 +114,7 @@ int	column(char *map)
 void	count_things(t_mlx *mlx, int check)
 {
 	mlx->game.p = 0;
+	mlx->game.x = 0;
 	mlx->game.e = 0;
 	mlx->game.c = 0;
 	mlx->axis.y = 0;
@@ -123,6 +125,8 @@ void	count_things(t_mlx *mlx, int check)
 		{
 			if (mlx->game.map[mlx->axis.y][mlx->axis.x] == 'P')
 				mlx->game.p++;
+			if (mlx->game.map[mlx->axis.y][mlx->axis.x] == 'X')
+				mlx->game.x++;
 			if (mlx->game.map[mlx->axis.y][mlx->axis.x] == 'E')
 				mlx->game.e++;
 			if (mlx->game.map[mlx->axis.y][mlx->axis.x] == 'C')
@@ -131,9 +135,5 @@ void	count_things(t_mlx *mlx, int check)
 		}
 		mlx->axis.y++;
 	}
-	if ((mlx->game.c < 1 || mlx->game.p != 1 || mlx->game.e != 1) && check == 1)
-	{
-		free_arr(mlx->game.map);
-		put_err("Error\n1 exit, 1 Player, at least 1 Coin\n");
-	}
+	count_helper(mlx, check);
 }
